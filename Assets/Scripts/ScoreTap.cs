@@ -9,8 +9,9 @@ namespace TapGame
     {
         [SerializeField] private TMP_Text _scoreText;
         [SerializeField] private Sprite _image;
-        private int _score = 0;
         [SerializeField]private Button _button;
+        [SerializeField] private ParticleSystem _particleSystem;
+        private int _score = 0;
 
         public void AddScore()
         {
@@ -18,9 +19,19 @@ namespace TapGame
             _scoreText.text = "Score: " + _score;
         }
 
+        public void EffectBom()
+        {
+            if (_score == 10)
+            {
+                var particle = Instantiate(_particleSystem, _button.transform.position, Quaternion.identity);
+                particle.Play();
+                Destroy(particle, 1f);
+            }
+        }
+
         private void Update()
         {
-            if (_score > 10)
+            if (_score >= 10)
             {
                 _button.image.sprite = _image;
             }
