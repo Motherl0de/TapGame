@@ -1,4 +1,5 @@
 
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ namespace TapGame
         [SerializeField]private Button _button;
         [SerializeField] private ParticleSystem _particleSystem;
         private int _score = 0;
+
 
         public void AddScore()
         {
