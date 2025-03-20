@@ -1,20 +1,27 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using GoogleMobileAds.Api;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 namespace TapGame
 {
     public class ADS : MonoBehaviour
     {
+        private RewardedAd _rewardedAd;
+
         public void Start()
         {
-            // Initialize the Google Mobile Ads SDK.
             MobileAds.Initialize((InitializationStatus initStatus) =>
             {
                 // This callback is called once the MobileAds SDK is initialized.
             });
+            LoadRewardedAd();
         }
         // These ad units are configured to always serve test ads.
 #if UNITY_ANDROID
@@ -25,11 +32,6 @@ namespace TapGame
   private string _adUnitId = "unused";
 #endif
 
-        private RewardedAd _rewardedAd;
-
-        /// <summary>
-        /// Loads the rewarded ad.
-        /// </summary>
         public void LoadRewardedAd()
         {
             // Clean up the old ad before loading a new one.
@@ -51,8 +53,8 @@ namespace TapGame
                     // if error is not null, the load request failed.
                     if (error != null || ad == null)
                     {
-                        Debug.LogError("Rewarded ad failed to load an ad " +
-                                       "with error : " + error);
+                        Debug.LogError("Ошибка загрузки рекламы: "
+                                       + error);
                         return;
                     }
 
@@ -60,6 +62,8 @@ namespace TapGame
                               + ad.GetResponseInfo());
 
                     _rewardedAd = ad;
+                    // Регистрируем обработчики для повторной загрузки
+                    RegisterReloadHandler(_rewardedAd);
                 });
         }
 
@@ -74,18 +78,22 @@ namespace TapGame
                 {
                     // TODO: Reward the user.
                     Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
+                    AdsShown?.Invoke();
                 });
             }
         }
+        //Событие на завершаение рекламы
+        public UnityEvent AdsShown = new();
+
 
         private void RegisterReloadHandler(RewardedAd ad)
         {
             // Raised when the ad closed full screen content.
             ad.OnAdFullScreenContentClosed += () =>
             {
-                Debug.Log("Rewarded Ad full screen content closed.");
+                Debug.Log("Пользователь закрыл рекламу");
 
-                // Reload the ad so that we can show another as soon as possible.
+                // Подгрузить новую рекламу, чтобы она была доступна в следующий раз
                 LoadRewardedAd();
             };
             // Raised when the ad failed to open full screen content.
