@@ -6,14 +6,14 @@ namespace TapGame
 {
     public class SpawnEgg : MonoBehaviour
     {
-        [SerializeField] private Object[] _rewardSprite;
-        [SerializeField] private Transform _spawnPoint;
+        [SerializeField] private Sprite[] _rewardSprite;
+        [SerializeField] private Image _spawnPoint;
         public void SpawnRandomPrefab()
         {
             var randomPrefab = _rewardSprite[Random.Range(0, _rewardSprite.Length)];
-            var newObj = Instantiate(randomPrefab, _spawnPoint.position, Quaternion.identity);
-
-            Debug.Log($"Заменили спрайт на {newObj}");
+            //var newObj = Instantiate(randomPrefab, _spawnPoint.transform.position, Quaternion.identity);
+            _spawnPoint.sprite = randomPrefab;
+            Debug.Log($"Заменили спрайт ");
             ScoreTap.Score = 0;
         }
     }

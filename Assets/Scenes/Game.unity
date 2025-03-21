@@ -506,12 +506,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rewardSprite:
-  - {fileID: 2315403372765510362, guid: 9c615d95e62ef9046aec919f46505e91, type: 3}
-  - {fileID: 176215241246025650, guid: 13622612c83b39d4098b924a6238476f, type: 3}
-  - {fileID: 686917585946472046, guid: f2c71c6fb05046745a0899d7f8fab7fe, type: 3}
-  - {fileID: 4501916606045895909, guid: cd422119733c5ce41ac97f402f4853f9, type: 3}
-  - {fileID: 1420864400562627792, guid: 4c8c67015bedae244ab2ae8b9d706185, type: 3}
-  _spawnPoint: {fileID: 1004690164}
+  - {fileID: 21300000, guid: 9176b44c9025a614ea14592cfa146bff, type: 3}
+  - {fileID: 21300000, guid: a3ed3ee272fb52f4f8794b707fb12680, type: 3}
+  - {fileID: 21300000, guid: db4d0f4c4ec20d449a38a2f766e28af3, type: 3}
+  - {fileID: 21300000, guid: d8611be1a7a8d8144a6584739b3a6b92, type: 3}
+  - {fileID: 21300000, guid: 94d1ab64b49b23a4ab9522de9b26193c, type: 3}
+  _spawnPoint: {fileID: 1004690166}
 --- !u!1 &1242979710
 GameObject:
   m_ObjectHideFlags: 0
