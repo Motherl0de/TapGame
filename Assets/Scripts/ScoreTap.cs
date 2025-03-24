@@ -4,14 +4,17 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
+
 
 namespace TapGame
 {
     public class ScoreTap : MonoBehaviour
     {
         [SerializeField] private TMP_Text _scoreText;
-        [SerializeField] private Sprite _image;
+        [SerializeField] private GameObject _image;
         [SerializeField]private Button _button;
+        [SerializeField] private Canvas _canvas;
         [SerializeField] private ParticleSystem _particleSystem;
         private static int _score = 0;
         public static int Score
@@ -29,6 +32,8 @@ namespace TapGame
         private void OnEnable()
         {
             ScoreSet.AddListener(UpdateScore);
+            var pos = new Vector3(_button.transform.position.x, _button.transform.position.y, -1);
+            Instantiate(_image, pos, Quaternion.identity, parent: _canvas.transform);
         }
 
         private void UpdateScore(int arg0)
@@ -46,17 +51,10 @@ namespace TapGame
         {
             if (Score == 10)
             {
-                var particle = Instantiate(_particleSystem, _button.transform.position, Quaternion.identity);
+                var pos = new Vector3(_button.transform.position.x, _button.transform.position.y, -2);
+                var particle = Instantiate(_particleSystem, pos, Quaternion.identity);
                 particle.Play();
                 Destroy(particle, 1f);
-            }
-        }
-
-        private void Update()
-        {
-            if (_score >= 10)
-            {
-                _button.image.sprite = _image;
             }
         }
 
