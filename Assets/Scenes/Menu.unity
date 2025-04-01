@@ -698,7 +698,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -345}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1900175753
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Title
+  m_text: Grow up you animals
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8eda44785e9c5df4699af2efc16495cd, type: 2}
   m_sharedMaterial: {fileID: 533372535686711208, guid: 8eda44785e9c5df4699af2efc16495cd, type: 2}
@@ -730,8 +730,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4288768639
+  m_fontColor: {r: 0.49963263, g: 0.41442683, b: 0.6320754, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -748,8 +748,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 131.5
-  m_fontSizeBase: 131.5
+  m_fontSize: 171.28
+  m_fontSizeBase: 171.28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
