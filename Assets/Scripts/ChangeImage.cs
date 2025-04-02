@@ -10,7 +10,7 @@ namespace TapGame
 
         private void Update()
         {
-            if (ScoreTap.Score == 10)
+            if (ScoreTap.Score == 50)
             {
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;
                 _sprite.SetActive(true);

@@ -49,7 +49,7 @@ namespace TapGame
 
         public void EffectBom()
         {
-            if (Score == 100)
+            if (Score == 50)
             {
                 var pos = new Vector3(_button.transform.position.x, _button.transform.position.y, -2);
                 var particle = Instantiate(_particleSystem, pos, Quaternion.identity);
