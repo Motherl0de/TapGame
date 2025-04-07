@@ -16,37 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: d0a7f40ae2d91114aa41157828a3bdad
-  m_SerializeEntries:
-  - m_GUID: 12ad541b0fb00544db5c2b98dec60c4a
-    m_Address: Assets/Prefabs/egg1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 13622612c83b39d4098b924a6238476f
-    m_Address: Assets/Prefabs/egg3.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4c8c67015bedae244ab2ae8b9d706185
-    m_Address: Assets/Prefabs/egg6.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9c615d95e62ef9046aec919f46505e91
-    m_Address: Assets/Prefabs/egg2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cd422119733c5ce41ac97f402f4853f9
-    m_Address: Assets/Prefabs/egg5.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f2c71c6fb05046745a0899d7f8fab7fe
-    m_Address: Assets/Prefabs/egg4.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 237066d15d163624f90c025ddc31fcc9, type: 2}
   m_SchemaSet:

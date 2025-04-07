@@ -1,13 +1,7 @@
 using System;
-using System.Linq;
 using GoogleMobileAds.Api;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
-using Object = UnityEngine.Object;
-using Random = UnityEngine.Random;
 
 namespace TapGame
 {
